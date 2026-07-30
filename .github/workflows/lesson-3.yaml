@@ -12,9 +12,9 @@ jobs:
         working-directory: frontend
     steps:
       - uses: actions/checkout@v4
-      - run: npm install
+      - run: npm install --legacy-peer-deps
       - name: Run functional tests
-        run: npm test --legacy-peer-deps
+        run: npm test
   deploy:
     needs: [function_test]
     runs-on: ubuntu-latest
